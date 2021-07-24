@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+  text-align: center;
+  margin: 100px;
+  padding: 100px;
+}
+
+ul {
+  padding-left: 0px;
+  margin: 100px;
+}
+
+.movies {
+  margin: 10px;
+}
+
+form {
+  padding: 10px;
+}
+
+button {
+  padding-left: 0px;
+  padding: 5px;
+  margin: 5px;
+}
