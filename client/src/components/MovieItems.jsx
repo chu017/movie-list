@@ -1,7 +1,6 @@
 import React from 'react';
 import App from './App.jsx';
 
-
 class MovieItems extends React.Component {
   constructor(props) {
     super(props);
@@ -14,14 +13,12 @@ class MovieItems extends React.Component {
 
   }
 
-
   handleSubmit(event) {
     event.preventDefault();
     this.setState({watched: true, name: 'watched'});
     alert('I watched this movie: ' + this.state.watched);
 
   }
-
 
     render() {
       return (

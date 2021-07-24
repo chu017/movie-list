@@ -1,2 +1,8 @@
+# dependencies
 node_modules
+
+# api keys
+.env
+
 .DS_Store
+package-lock.json

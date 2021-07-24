@@ -42,8 +42,6 @@ class SearchMovie extends React.Component {
 
         </form>
 
-
-
       </div>
     );
   }

@@ -4,7 +4,6 @@ import AddMovie from './AddMovie.jsx';
 import SearchMovie from './SearchMovie.jsx';
 import MovieList from './MovieList.jsx';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -20,16 +19,17 @@ class App extends React.Component {
     this.movieToWatch = this.movieToWatch.bind(this);
   }
 
-  movies : movies:{
-    {title: 'Mean Girls',
-    }
-  }
-
+  // movies : movies:{
+  //   {title: 'Mean Girls',
+  //   }
+  // }
 
   componentDidMount() {
     this.setState({movies: [
-      {title: 'Mean Girls'
-        watched: true},
+      {
+        title: 'Mean Girls',
+        watched: true
+      },
       {title: 'Hackers'},
       {title: 'The Grey'},
       {title: 'Sunshine'},
