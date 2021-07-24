@@ -1,11 +1,11 @@
 import React from 'react';
-import App from './App.jsx';
+import App from '../App.jsx';
 
-class SearchMovie extends React.Component {
+class AddMovie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchedMovie: ''
+      title: ''
 
     };
 
@@ -15,16 +15,15 @@ class SearchMovie extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({searchedMovie: event.target.value});
+    this.setState({title: event.target.value});
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    // alert('A name was submitted: ' + this.state.searchMovie);
-    const movie = this.state.searchedMovie;
-    console.log(movie);
-    this.props.searchedMovie(movie);
-
+    // alert('A name was submitted: ' + this.state.addMovie);
+    const movie = this.state;
+    // console.log(movie);
+    this.props.addMovie(movie);
   }
 
   render() {
@@ -32,13 +31,15 @@ class SearchMovie extends React.Component {
       <div>
 
         <form onSubmit={this.handleSubmit}>
-
           <input
           type="text"
-          value={this.state.searchedMovie}
+          name="text"
+          value={this.state.addMovie}
           onChange={this.handleChange}
-          placeholder="Search.." />
-          <input type="submit" value="Go!" />
+          placeholder="Add movie title here"
+          />
+
+          <input type="submit" value="Add" />
 
         </form>
 
@@ -47,4 +48,4 @@ class SearchMovie extends React.Component {
   }
 }
 
-export default SearchMovie;
+export default AddMovie;

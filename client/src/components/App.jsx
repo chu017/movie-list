@@ -1,22 +1,19 @@
-import React from 'react';
-import MovieHeader from './MovieHeader.jsx';
-import AddMovie from './AddMovie.jsx';
-import SearchMovie from './SearchMovie.jsx';
-import MovieList from './MovieList.jsx';
+import React, { useState } from 'react';
+import AddMovie from './Add/AddMovie.jsx';
+import SearchMovie from './Search/SearchMovie.jsx';
+import MovieList from './List/MovieList.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: [],
+      movieList: [],
       searchedMovies: []
-
     };
 
     this.searchedMovie = this.searchedMovie.bind(this);
     this.addMovie = this.addMovie.bind(this);
-    this.watchedMovie = this.watchedMovie.bind(this);
-    this.movieToWatch = this.movieToWatch.bind(this);
+    this.toggleMovie = this.toggleMovie.bind(this);
   }
 
   // movies : movies:{
@@ -25,7 +22,7 @@ class App extends React.Component {
   // }
 
   componentDidMount() {
-    this.setState({movies: [
+    this.setState({movieList: [
       {
         title: 'Mean Girls',
         watched: true
@@ -39,7 +36,7 @@ class App extends React.Component {
 
   searchedMovie(movie) {
     // console.log(movie)
-    var movies = this.state.movies;
+    var movies = this.state.movieList;
     for (var i = 0; i < movies.length; i++) {
       if (movies[i].title === movie) {
 
@@ -53,24 +50,21 @@ class App extends React.Component {
 
   addMovie(movie) {
     // console.log(movie);
-    this.setState({movies: [movie, ...this.state.movies]})
+    this.setState({movieList: [movie, ...this.state.movieList]})
   }
 
-  watchedMovie(movie) {
+  toggleMovie(movie) {
     // console.log(movie);
-    this.setState({movies: []})
+    this.setState({movieList: []})
   }
-
-  movieToWatch(movie) {
-
-  }
-
 
   render() {
     return (
       <div>
+        <div>
+          <h1>Movie List</h1>
+        </div>
 
-        <MovieHeader />
         <AddMovie
         addMovie={this.addMovie}
         />
@@ -85,10 +79,8 @@ class App extends React.Component {
 
       </div>
     );
-
   }
 
 }
-
 
 export default App;

@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/movies', (req, res) => {
-  axios.get(`https://api.themoviedb.org/3/movie/550?api_key=${API_KEY}`)
+  axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=mean+girls`)
     .then((response) => {
       console.log('data from api:', response.data);
     })
