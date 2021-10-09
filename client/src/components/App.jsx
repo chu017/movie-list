@@ -49,7 +49,7 @@ class App extends React.Component {
   }
 
   addMovie(movie) {
-    // console.log(movie);
+    console.log(movie);
     this.setState({movieList: [movie, ...this.state.movieList]})
   }
 
