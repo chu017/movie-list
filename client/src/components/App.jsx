@@ -53,7 +53,6 @@ class App extends React.Component {
   }
 
   toggleMovie(movie) {
-    // console.log(movie);
     this.setState({movieList: []})
   }
 
